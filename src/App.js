@@ -25,9 +25,13 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.increase()
     }, 1000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
   }
 
   render() {
