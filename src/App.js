@@ -19,12 +19,17 @@ export default class App extends Component {
     }))
   }
 
+  reset = () => {
+    this.setState({counter: 0})
+  }
+
   render() {
     return (
       <div>
         <h3>Counter: { this.state.counter } </h3>
         <button onClick={ this.increase }>Increase</button>
         <button onClick={ this.decrease }>Decrease</button>
+        <button onClick={ this.reset }>Reset</button>
       </div>
     )
   }
