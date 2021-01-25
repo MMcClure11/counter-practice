@@ -6,7 +6,6 @@ const Counter = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      // setCounter(prevCount => prevCount + 1);
       increment()
     }, 1000);
     return () => {
@@ -18,7 +17,6 @@ const Counter = () => {
 
   const decrement = () => setCounter(prevCount => prevCount - 1)
   
-
   const reset = () => setCounter(0)
   
 
