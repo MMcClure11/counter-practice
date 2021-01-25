@@ -6,24 +6,21 @@ const Counter = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCounter(prevCount => prevCount + 1);
+      // setCounter(prevCount => prevCount + 1);
+      increment()
     }, 1000);
     return () => {
       clearInterval(timer);
     };
   }, []); // Pass in empty array to run effect only once!
 
-  const increment = () => {
-    setCounter(prevCount => prevCount + 1)
-  }
+  const increment = () => setCounter(prevCount => prevCount + 1)
 
-  const decrement = () => {
-    setCounter(prevCount => prevCount - 1)
-  }
+  const decrement = () => setCounter(prevCount => prevCount - 1)
+  
 
-  const reset = () => {
-    setCounter(0)
-  }
+  const reset = () => setCounter(0)
+  
 
   return (
     <div>
