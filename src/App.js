@@ -8,14 +8,23 @@ export default class App extends Component {
   }
 
   increase = () => {
-    this.setState({counter: this.state.counter + 1})
+    this.setState((prevState) => ({ 
+      counter: prevState.counter + 1 
+    }))
+  }
+
+  decrease = () => {
+    this.setState((prevState) => ({ 
+      counter: prevState.counter - 1 
+    }))
   }
 
   render() {
     return (
       <div>
-        <h3>Counter: {this.state.counter} </h3>
+        <h3>Counter: { this.state.counter } </h3>
         <button onClick={ this.increase }>Increase</button>
+        <button onClick={ this.decrease }>Decrease</button>
       </div>
     )
   }
