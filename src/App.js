@@ -24,16 +24,11 @@ export default class App extends Component {
     this.setState({counter: 0})
   }
 
-  // componentDidMount(){
-  //   console.log('Hello from cdm')
-  //   setInterval(function(){ console.log("Hello"); }, 5000);
-  //   // setInterval( this.increase, 5000);
-  //   // const timer = setInterval( () => {
-  //   //   this.setState((prevState) => ({ 
-  //   //     counter: prevState.counter + 1 
-  //   //   })), 1000
-  //   // })
-  // }
+  componentDidMount(){
+    setInterval(() => {
+      this.increase()
+    }, 1000)
+  }
 
   render() {
     return (
