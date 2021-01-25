@@ -21,11 +21,16 @@ const Counter = () => {
     setCounter(prevCount => prevCount - 1)
   }
 
+  const reset = () => {
+    setCounter(0)
+  }
+
   return (
     <div>
       <h2>Count: { counter }</h2>
       <button onClick={ increment }>Increment</button>
       <button onClick={ decrement }>Decrement</button>
+      <button onClick={ reset }>Reset</button>
     </div>
   )
 }
