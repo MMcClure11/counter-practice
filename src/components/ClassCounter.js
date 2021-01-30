@@ -18,6 +18,17 @@ export default class ClassCounter extends Component {
     )
   }
 
+  reset = () => {
+    this.setState({count: 0})
+  }
+
+  componentDidMount() {
+    let timer = setInterval(() => {
+      this.increment()
+    }, 1000)
+  }
+  
+
   render() {
     return (
       <div>
@@ -25,6 +36,7 @@ export default class ClassCounter extends Component {
         { this.state.count }
         <button onClick={ this.increment }>Increment</button>
         <button onClick={ this.decrement }>Decrement</button>
+        <button onClick={ this.reset }>Reset</button>
       </div>
     )
   }
