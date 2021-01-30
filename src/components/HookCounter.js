@@ -7,12 +7,16 @@ const HookCounter = () => {
     return setCounter(prevCount => prevCount + 1)
   }
 
+  const decrement = () => {
+    return setCounter(prevCount => prevCount - 1)
+  }
+
   return(
     <div>
       <h2>I am a counter built using hooks</h2>
       { counter }
       <button onClick={ increment }>Increment</button>
-      <button>Decrement</button>
+      <button onClick={ decrement }>Decrement</button>
     </div>
   )
 }
