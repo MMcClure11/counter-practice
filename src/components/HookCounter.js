@@ -6,15 +6,36 @@ const HookCounter = () => {
 
   const [ counter, setCounter ] = useState(initialState)
 
-  useEffect( () => {
-    const timer = setInterval( () => {
+  let intervalHandle;
+
+  const startTimer = () => {
+    intervalHandle = setInterval(() => {
       increment()
     }, 1000)
-    return () => {
-      clearInterval(timer)
-    }
+  }
 
-  }, [])
+  const stopTimer = () => {
+    clearInterval(intervalHandle)
+  }
+  
+  // useEffect( () => {
+  //   const timer = setInterval( () => {
+  //     increment()
+  //   }, 1000)
+  //   return () => {
+  //     clearInterval(timer)
+  //   }
+
+  // }, [])
+
+  const start = () => {
+    startTimer()
+  }
+
+  const pause = () => {
+    clearInterval(intervalHandle)
+    console.log("pause was clicked")
+  }
 
   const reset = () => {
     return setCounter(initialState)
@@ -32,6 +53,8 @@ const HookCounter = () => {
     <div>
       <h2>I am a counter built using hooks</h2>
       { counter }
+      <button onClick={ start }>Start</button>
+      <button onClick={ pause }>Pause</button>
       <button onClick={ reset }>Reset</button>
       <button onClick={ increment }>Increment</button>
       <button onClick={ decrement }>Decrement</button>
