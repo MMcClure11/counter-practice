@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 
 const HookCounter = () => {
-  const [ counter, setCounter ] = useState(0)
+  const initialState = 0 
+  const [ counter, setCounter ] = useState(initialState)
+
+  const reset = () => {
+    return setCounter(initialState)
+  }
 
   const increment = () => {
     return setCounter(prevCount => prevCount + 1)
@@ -15,6 +20,7 @@ const HookCounter = () => {
     <div>
       <h2>I am a counter built using hooks</h2>
       { counter }
+      <button onClick={ reset }>Reset</button>
       <button onClick={ increment }>Increment</button>
       <button onClick={ decrement }>Decrement</button>
     </div>
