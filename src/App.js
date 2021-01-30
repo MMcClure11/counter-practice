@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import ClassCounter from './components/ClassCounter'
 import HookCounter from './components/HookCounter'
 import Countdown from './components/Countdown'
+import NavBar from './containers/NavBar'
 
 
 import React from 'react'
@@ -10,6 +11,7 @@ import React from 'react'
 const App = () => {
   return (
     <Router>
+      <NavBar />
     <Switch>
       <Route exact path='/class-counter'><ClassCounter /></Route>
       <Route exact path='/hook-counter'><HookCounter /></Route>
