@@ -1,8 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const HookCounter = () => {
+
   const initialState = 0 
+
   const [ counter, setCounter ] = useState(initialState)
+
+  useEffect( () => {
+    const timer = setInterval( () => {
+      increment()
+    }, 1000)
+    return () => {
+      clearInterval(timer)
+    }
+
+  }, [])
 
   const reset = () => {
     return setCounter(initialState)
