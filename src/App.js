@@ -1,49 +1,15 @@
 import './App.css';
-import React, { Component } from 'react'
-import Counter from './Counter'
 
-export default class App extends Component {
+import React from 'react'
 
-  state = {
-    counter: 0,
-  }
-
-  increase = () => {
-    this.setState((prevState) => ({ 
-      counter: prevState.counter + 1 
-    }))
-  }
-
-  decrease = () => {
-    this.setState((prevState) => ({ 
-      counter: prevState.counter - 1 
-    }))
-  }
-
-  reset = () => {
-    this.setState({counter: 0})
-  }
-
-  componentDidMount(){
-    this.interval = setInterval(() => {
-      this.increase()
-    }, 1000)
-  }
-
-  componentWillUnmount(){
-    clearInterval(this.interval)
-  }
-
-  render() {
-    return (
-      <div>
-        <h3>Counter: { this.state.counter } </h3>
-        <button onClick={ this.increase }>Increase</button>
-        <button onClick={ this.decrease }>Decrease</button>
-        <button onClick={ this.reset }>Reset</button>
-        <Counter />
-      </div>
-    )
-  }
+const App = () => {
+  return (
+    <div>
+      I am the app
+    </div>
+  )
 }
+
+export default App
+
 
