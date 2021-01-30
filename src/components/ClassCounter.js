@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const ClassCounter = () => {
-  return (
-    <div>
-      I am the class counter
-    </div>
-  )
+export default class ClassCounter extends Component {
+  render() {
+    return (
+      <div>
+        <h2>I am a counter using a Class Component</h2>
+      </div>
+    )
+  }
 }
 
-export default ClassCounter

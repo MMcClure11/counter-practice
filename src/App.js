@@ -11,7 +11,7 @@ import React from 'react'
 const App = () => {
   return (
     <Router>
-      <NavBar />
+    <NavBar />
     <Switch>
       <Route exact path='/class-counter'><ClassCounter /></Route>
       <Route exact path='/hook-counter'><HookCounter /></Route>
