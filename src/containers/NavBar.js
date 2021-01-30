@@ -1,7 +1,19 @@
+import { NavLink } from 'react-router-dom'
+
 const NavBar = () => {
   return (
     <div>
-      I am the NavBar
+      <ul>
+        <li>
+          <NavLink to='class-counter'>Counter built with a Class Component</NavLink>
+        </li>
+        <li>
+          <NavLink to='hook-counter'>Counter built using Hooks</NavLink>
+        </li>
+        <li>
+          <NavLink to='countdown'>Countdown</NavLink>
+        </li>
+      </ul>
     </div>
   )
 }
