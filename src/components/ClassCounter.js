@@ -22,10 +22,15 @@ export default class ClassCounter extends Component {
     this.setState({count: 0})
   }
 
+
   componentDidMount() {
-    let timer = setInterval(() => {
+    setInterval(() => {
       this.increment()
     }, 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval()
   }
   
 
