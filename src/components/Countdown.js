@@ -9,23 +9,26 @@ export default class CountDown extends Component {
   }
 
   componentDidMount() {
-    this.inverval = setInterval(() => {
-      let seconds = this.state.seconds - 1
-      let minutes = this.state.minutes - 1
-      if ( seconds >= 0 ) {
-        this.setState({
-          seconds: seconds
-        })
-      } else {
-        this.setState({
-          minutes: minutes,
-          seconds: 59
-        })
+    this.myInterval = setInterval(() => {
+      const { seconds, minutes } = this.state
+
+      if (seconds > 0) {
+          this.setState(({ seconds }) => ({
+              seconds: seconds - 1
+          }))
       }
-      if ( minutes === 0 ) {
-        clearInterval(this.inverval)
-      }
+      if (seconds === 0) {
+          if (minutes === 0) {
+              clearInterval(this.myInterval)
+          } else {
+              this.setState(({ minutes }) => ({
+                  minutes: minutes - 1,
+                  seconds: 59
+              }))
+          }
+      } 
     }, 1000)
+
   }
 
   increment = () => {
