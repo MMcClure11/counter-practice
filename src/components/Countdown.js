@@ -40,6 +40,10 @@ export default class CountDown extends Component {
     }))
   }
 
+  reset = () => {
+    this.setState({count: 0})
+  }
+
  render(){
    const { count, minutes, seconds } = this.state
    return(
@@ -48,7 +52,7 @@ export default class CountDown extends Component {
       <h2>{ count }</h2>     
       <button onClick={this.increment}>+</button>
       <button onClick={this.decrement}>-</button>
-      <button>0</button>
+      <button onClick={this.reset}>0</button>
     </>
    )
  }
