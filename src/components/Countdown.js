@@ -34,6 +34,12 @@ export default class CountDown extends Component {
     }))
   }
 
+  decrement = () => {
+    this.setState(prevState => ({
+      count: prevState.count -1 
+    }))
+  }
+
  render(){
    const { count, minutes, seconds } = this.state
    return(
@@ -41,7 +47,7 @@ export default class CountDown extends Component {
       <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>
       <h2>{ count }</h2>     
       <button onClick={this.increment}>+</button>
-      <button>-</button>
+      <button onClick={this.decrement}>-</button>
       <button>0</button>
     </>
    )
