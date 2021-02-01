@@ -53,7 +53,7 @@ const HookCounter = () => {
   return(
     <div>
       <h2>I am a counter built using hooks</h2>
-      { counter }
+      <h3>{ counter }</h3>
       {/* <button onClick={ start }>Start</button>
       <button onClick={ pause }>Pause</button> */}
       <button onClick={ reset }>Reset</button>

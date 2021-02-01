@@ -1,9 +1,12 @@
-const Countdown = () => {
-  return (
-    <div>
-      I am the countdown component
-    </div>
-  )
-}
+import React, { Component } from 'react'
 
-export default Countdown
+export default class CountDown extends Component {
+
+ render(){
+   return(
+     <div>
+       ClassCountdown component
+     </div>
+   )
+ }
+}
