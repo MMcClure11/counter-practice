@@ -31,7 +31,7 @@ export default class CountDown extends Component {
   }
 
  render(){
-   const { count, minutes, seconds } = this.state
+   const { minutes, seconds } = this.state
    return(
     <>
     <h3>3 Min Countdown built with a class component</h3>
