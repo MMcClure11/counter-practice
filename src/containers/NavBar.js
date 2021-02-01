@@ -11,7 +11,7 @@ const NavBar = () => {
           <NavLink to='hook-counter'>Counter built using Hooks</NavLink>
         </li>
         <li>
-          <NavLink to='countdown'>Countdown</NavLink>
+          <NavLink to='countdown'>3 Minute Countdown</NavLink>
         </li>
       </ul>
     </div>

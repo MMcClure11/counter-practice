@@ -34,6 +34,7 @@ export default class CountDown extends Component {
    const { count, minutes, seconds } = this.state
    return(
     <>
+    <h3>3 Min Countdown built with a class component</h3>
       <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>
       { minutes === 0 && seconds === 0 
         ? <h2>Time's up!</h2>
