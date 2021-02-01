@@ -14,7 +14,7 @@ export default class ClassCounter extends Component {
 
   decrement = () => {
     this.setState(
-      prevState => ({count: prevState.count -1})
+      prevState => ({count: prevState.count - 1})
     )
   }
 
@@ -23,20 +23,20 @@ export default class ClassCounter extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.increment()
     }, 1000)
   }
 
   componentWillUnmount() {
-    clearInterval()
+    clearInterval(this.interval)
   }
 
   render() {
     return (
       <div>
         <h2>I am a counter using a Class Component</h2>
-        { this.state.count }
+        <h1>{ this.state.count }</h1>
         <button onClick={ this.increment }>Increment</button>
         <button onClick={ this.decrement }>Decrement</button>
         <button onClick={ this.reset }>Reset</button>
