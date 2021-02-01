@@ -32,7 +32,13 @@ export default class CountDown extends Component {
    const { count, minutes, seconds } = this.state
    return(
     <>
-      <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>     
+      <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>
+      <h2>{ count }</h2>     
+      
+        <button>+</button>
+        <button>-</button>
+        <button>0</button>
+      
     </>
    )
  }
