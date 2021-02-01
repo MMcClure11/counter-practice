@@ -13,6 +13,9 @@ const NavBar = () => {
         <li>
           <NavLink to='countdown'>3 Minute Countdown</NavLink>
         </li>
+        <li>
+          <NavLink to='countdown-5'>5 Minute Countdown</NavLink>
+        </li>
       </ul>
     </div>
   )
