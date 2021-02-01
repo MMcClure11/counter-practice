@@ -22,6 +22,16 @@ export default class ClassCounter extends Component {
     this.setState({count: 0})
   }
 
+  componentDidMount(){
+    this.interval = setInterval(() => {
+      this.increment()
+    }, 1000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
+
   render(){
     return(
       <>
@@ -40,4 +50,3 @@ export default class ClassCounter extends Component {
     )
   }
 }
-
