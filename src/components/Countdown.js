@@ -28,17 +28,21 @@ export default class CountDown extends Component {
     }, 1000)
   }
 
+  increment = () => {
+    this.setState( prevState => ({
+      count: prevState.count + 1
+    }))
+  }
+
  render(){
    const { count, minutes, seconds } = this.state
    return(
     <>
       <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>
       <h2>{ count }</h2>     
-      
-        <button>+</button>
-        <button>-</button>
-        <button>0</button>
-      
+      <button onClick={this.increment}>+</button>
+      <button>-</button>
+      <button>0</button>
     </>
    )
  }
