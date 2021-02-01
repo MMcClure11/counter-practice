@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 export default class CountDown extends Component {
 
   state = {
-    count: 0,
     minutes: 3,
     seconds: 0
   }
@@ -31,31 +30,15 @@ export default class CountDown extends Component {
 
   }
 
-  increment = () => {
-    this.setState( prevState => ({
-      count: prevState.count + 1
-    }))
-  }
-
-  decrement = () => {
-    this.setState(prevState => ({
-      count: prevState.count -1 
-    }))
-  }
-
-  reset = () => {
-    this.setState({count: 0})
-  }
-
  render(){
    const { count, minutes, seconds } = this.state
    return(
     <>
       <h1>Time Remaining: { minutes } minutes, { seconds } seconds</h1>
-      <h2>{ count }</h2>     
-      <button onClick={this.increment}>+</button>
-      <button onClick={this.decrement}>-</button>
-      <button onClick={this.reset}>0</button>
+      { minutes === 0 && seconds === 0 
+        ? <h2>Time's up!</h2>
+        : <h2>Time Remaining: { minutes }:{ seconds < 10 ? `0${seconds}` : seconds }</h2>
+      }
     </>
    )
  }
