@@ -12,6 +12,12 @@ export default class ClassCounter extends Component {
     }))
   }
 
+  decrement = () => {
+    this.setState(({ count }) => ({
+      count: count - 1
+    }))
+  }
+
   render(){
     return(
       <>
@@ -21,7 +27,7 @@ export default class ClassCounter extends Component {
           <button onClick={ this.increment }>+</button>
         </div>
         <div>
-          <button>-</button>
+          <button onClick={ this.decrement }>-</button>
         </div>
         <div>
           <button>0</button>
