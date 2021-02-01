@@ -18,6 +18,10 @@ export default class ClassCounter extends Component {
     }))
   }
 
+  reset = () => {
+    this.setState({count: 0})
+  }
+
   render(){
     return(
       <>
@@ -30,7 +34,7 @@ export default class ClassCounter extends Component {
           <button onClick={ this.decrement }>-</button>
         </div>
         <div>
-          <button>0</button>
+          <button onClick={ this.reset }>0</button>
         </div>
       </>
     )
