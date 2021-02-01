@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class CountDownFive extends Component {
 
   state = {
-    minutes: 5,
+    minutes: 1,
     seconds: 0
   }
 
@@ -18,6 +18,9 @@ export default class CountDownFive extends Component {
         this.setState((prevState) => ({
           seconds: prevState.seconds - 1
         }))
+      }
+      if(this.state.seconds === 0 && this.state.minutes === 0) {
+        clearInterval(this.interval)
       }
     }, 1000)
   }
