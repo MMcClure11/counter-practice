@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class CountDownFive extends Component {
 
   state = {
-    minutes: 1,
+    minutes: 5,
     seconds: 0
   }
 
@@ -29,7 +29,10 @@ export default class CountDownFive extends Component {
     const { minutes, seconds } = this.state
     return(
       <div>
-        <h1>Time Remaining - { minutes } : { seconds < 10 ? `0${seconds}` : seconds }</h1>
+        { minutes === 0 && seconds === 0 
+          ? <h1>Time's up!</h1>
+          : <h1>Time Remaining - { minutes } : { seconds < 10 ? `0${seconds}` : seconds }</h1>
+        }
       </div>
     )
   }
