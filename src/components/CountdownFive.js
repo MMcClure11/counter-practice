@@ -22,11 +22,15 @@ export default class CountDownFive extends Component {
           seconds: seconds - 1
         }))
       }
-      
+
       if(seconds === 0 && minutes === 0) {
         clearInterval(this.interval)
       }
     }, 1000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
   }
 
   render(){
