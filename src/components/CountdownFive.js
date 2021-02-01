@@ -2,10 +2,16 @@ import React, { Component } from 'react'
 
 export default class CountDownFive extends Component {
 
+  state = {
+    minutes: 5,
+    seconds: 0
+  }
+
   render(){
+    const { minutes, seconds } = this.state
     return(
       <div>
-        CountdownFive component
+        <h1>Time Remaining: { minutes } : { seconds }</h1>
       </div>
     )
   }
