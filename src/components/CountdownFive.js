@@ -9,7 +9,10 @@ export default class CountDownFive extends Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      if( this.state.seconds <= 0 && this.state.minutes !== 0 ){
+
+      const { minutes, seconds } = this.state
+
+      if( seconds <= 0 && minutes !== 0 ){
         this.setState((prevState) => ({
           minutes: prevState.minutes - 1,
           seconds: 59
@@ -19,7 +22,7 @@ export default class CountDownFive extends Component {
           seconds: prevState.seconds - 1
         }))
       }
-      if(this.state.seconds === 0 && this.state.minutes === 0) {
+      if(seconds === 0 && minutes === 0) {
         clearInterval(this.interval)
       }
     }, 1000)
