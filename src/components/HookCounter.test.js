@@ -40,3 +40,16 @@ describe('Increment', () => {
     expect(count).toBe('1');
   });
 });
+
+describe('setInterval fn', () => {
+
+  test('increment counter by 1 after 1 second', () => {
+    const wrapper = setup();
+    const count = findByTestAttr(wrapper, 'count').text();
+    
+    jest.useFakeTimers();
+    expect(count).toBe('0');
+    jest.advanceTimersByTime(1000);
+    expect(count).toBe('1');
+  });
+});
