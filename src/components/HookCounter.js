@@ -31,7 +31,10 @@ const HookCounter = () => {
   return(
     <div data-test='hook-counter-component'>
       <h2>I am a counter built using hooks</h2>
-      <h3 data-test='counter-display'>{ counter }</h3>
+      <h3 data-test='counter-display'>
+        Count is at:&nbsp;
+        <span data-test='count'>{ counter }</span>
+      </h3>
       <button onClick={ reset }>Reset</button>
       <button onClick={ increment }>Increment</button>
       <button onClick={ decrement }>Decrement</button>
