@@ -31,4 +31,12 @@ describe('Increment', () => {
     const button = findByTestAttr(wrapper, 'increment-button');
     expect(button.length).toBe(1);
   });
+
+  test('counter increments when button is clicked', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'increment-button');
+    button.simulate('click');
+    const count = findByTestAttr(wrapper, 'count').text();
+    expect(count).toBe('1');
+  });
 });
