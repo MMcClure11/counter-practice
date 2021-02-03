@@ -23,3 +23,12 @@ test('counter starts at 0', () => {
   const count = findByTestAttr(wrapper, 'count').text();
   expect(count).toBe('0');
 });
+
+describe('Increment', () => {
+
+  test('renders increment button', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'increment-button');
+    expect(button.length).toBe(1);
+  });
+});
