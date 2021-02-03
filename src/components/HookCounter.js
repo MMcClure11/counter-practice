@@ -38,7 +38,8 @@ const HookCounter = () => {
       <button onClick={ reset }>Reset</button>
       <button data-test='increment-button' 
         onClick={ increment }>Increment</button>
-      <button onClick={ decrement }>Decrement</button>
+      <button data-test='decrement-button' 
+        onClick={ decrement }>Decrement</button>
     </div>
   )
 }

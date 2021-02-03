@@ -41,15 +41,18 @@ describe('Increment', () => {
   });
 });
 
-describe('setInterval fn', () => {
-
-  test('increment counter by 1 after 1 second', () => {
+describe('Decrement', () => {
+  test('renders decrement button', () => {
     const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'decrement-button');
+    expect(button.length).toBe(1);
+  });
+
+  test('counter decrements when button is clicked', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'decrement-button');
+    button.simulate('click');
     const count = findByTestAttr(wrapper, 'count').text();
-    
-    jest.useFakeTimers();
-    expect(count).toBe('0');
-    jest.advanceTimersByTime(1000);
-    expect(count).toBe('1');
+    expect(count).toBe('-1');
   });
 });
