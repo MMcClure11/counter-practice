@@ -63,4 +63,14 @@ describe('Reset', () => {
     const button = findByTestAttr(wrapper, 'reset-button');
     expect(button.length).toBe(1);
   });
+
+  test('counter resets to 0  when button is clicked', () => {
+    const wrapper = setup();
+    const incButton = findByTestAttr(wrapper, 'increment-button');
+    incButton.simulate('click');
+    const resetButton = findByTestAttr(wrapper, 'reset-button');
+    resetButton.simulate('click');
+    const count = findByTestAttr(wrapper, 'count').text();
+    expect(count).toBe('0');
+  });
 });
