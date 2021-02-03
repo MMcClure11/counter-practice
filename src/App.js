@@ -12,16 +12,18 @@ import React from 'react'
 
 const App = () => {
   return (
-    <Router>
-    <NavBar />
-    <Switch>
-      <Route exact path='/class-counter'><ClassCounter /></Route>
-      <Route exact path='/hook-counter'><HookCounter /></Route>
-      <Route exact path='/countdown'><Countdown /></Route>
-      <Route exact path='/countdown-5'><CountdownFive /></Route>
-      <Route exact path='/pause-counter'><PauseCounter /></Route>
-    </Switch>
-    </Router>
+    <div data-test="component-app" className="App">
+      <Router>
+      <NavBar />
+      <Switch>
+        <Route exact path='/class-counter'><ClassCounter /></Route>
+        <Route exact path='/hook-counter'><HookCounter /></Route>
+        <Route exact path='/countdown'><Countdown /></Route>
+        <Route exact path='/countdown-5'><CountdownFive /></Route>
+        <Route exact path='/pause-counter'><PauseCounter /></Route>
+      </Switch>
+      </Router>
+    </div>
   )
 }
 
