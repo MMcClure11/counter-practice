@@ -6,19 +6,6 @@ const HookCounter = () => {
 
   const [ counter, setCounter ] = useState(initialState)
 
-  // let intervalHandle;
-
-  // const startTimer = () => {
-  //   intervalHandle = setInterval(() => {
-  //     increment()
-  //   }, 1000)
-  // }
-
-  // const stopTimer = () => {
-  //   clearInterval(intervalHandle)
-  // }
-  //I think I need state to have paused or not instead of useEffect if I want to be able to pause the timer
-
   useEffect( () => {
     const timer = setInterval( () => {
       increment()
@@ -28,15 +15,6 @@ const HookCounter = () => {
     }
 
   }, [])
-
-  // const start = () => {
-  //   startTimer()
-  // }
-
-  // const pause = () => {
-  //   clearInterval(intervalHandle)
-  //   console.log("pause was clicked")
-  // }
 
   const reset = () => {
     return setCounter(initialState)
@@ -51,11 +29,9 @@ const HookCounter = () => {
   }
 
   return(
-    <div>
+    <div data-test='hook-counter-component'>
       <h2>I am a counter built using hooks</h2>
       <h3>{ counter }</h3>
-      {/* <button onClick={ start }>Start</button>
-      <button onClick={ pause }>Pause</button> */}
       <button onClick={ reset }>Reset</button>
       <button onClick={ increment }>Increment</button>
       <button onClick={ decrement }>Decrement</button>
