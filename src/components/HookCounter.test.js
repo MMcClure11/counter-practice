@@ -11,3 +11,9 @@ test('renders without error', () => {
   const hookCounterComponent = findByTestAttr(wrapper, 'hook-counter-component');
   expect(hookCounterComponent.length).toBe(1);
 });
+
+test('renders counter display', () => {
+  const wrapper = setup();
+  const counterDisplay = findByTestAttr(wrapper, 'counter-display');
+  expect(counterDisplay.length).toBe(1);
+});
