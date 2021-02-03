@@ -56,3 +56,11 @@ describe('Decrement', () => {
     expect(count).toBe('-1');
   });
 });
+
+describe('Reset', () => {
+  test('renders reset button', () => {
+    const wrapper = setup();
+    const button = findByTestAttr(wrapper, 'reset-button');
+    expect(button.length).toBe(1);
+  });
+});
