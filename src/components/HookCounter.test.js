@@ -1,9 +1,8 @@
 import HookCounter from './HookCounter';
-import Enzyme, { shallow } from 'enzyme';
-import EnzymeAdapter from '@wojtekmaj/enzyme-adapter-react-17';
+import { shallow } from 'enzyme';
 
-Enzyme.configure({ adapter: new EnzymeAdapter() });
 const setup = () => shallow(<HookCounter />);
+
 const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
 test('renders without error', () => {
