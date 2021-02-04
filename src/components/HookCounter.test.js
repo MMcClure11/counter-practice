@@ -2,6 +2,12 @@ import HookCounter from './HookCounter';
 import { shallow } from 'enzyme';
 import { findByTestAttr } from '../../test/testUtils'
 
+/**
+ * Factory function to create a ShallowWrapper for the HookCounter component
+ * @function setup
+ * @returns {ShallowWrapper}
+ */
+
 const setup = () => shallow(<HookCounter />);
 
 test('renders without error', () => {
