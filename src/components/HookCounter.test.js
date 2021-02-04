@@ -1,9 +1,8 @@
 import HookCounter from './HookCounter';
 import { shallow } from 'enzyme';
+import { findByTestAttr } from '../../test/testUtils'
 
 const setup = () => shallow(<HookCounter />);
-
-const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test="${val}"]`);
 
 test('renders without error', () => {
   const wrapper = setup();
